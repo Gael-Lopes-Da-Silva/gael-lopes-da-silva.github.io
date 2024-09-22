@@ -44,6 +44,7 @@
             color: #FFFFFF;
             font-weight: bold;
             font-size: 2rem;
+            text-align: center;
         }
 
         #infos {
@@ -98,6 +99,7 @@
         #infos_top>div>h4 {
             font-weight: bold;
             font-size: 1rem;
+            text-align: center;
         }
 
         #infos_top>div>h4>a {
@@ -397,6 +399,7 @@
             margin: 0;
             color: #FFFFFF;
             font-weight: bold;
+            text-align: center;
         }
 
         footer>p>i {
@@ -406,8 +409,9 @@
 
         footer>a {
             color: #FFFFFF;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
+            text-align: center;
         }
 
         footer>a:hover {
@@ -424,6 +428,112 @@
             to {
                 transform: scale(1.2);
                 opacity: 0.4;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            #infos_top {
+                flex-direction: column-reverse;
+            }
+
+            #infos_top>img {
+                margin-bottom: 20px;
+            }
+
+            #projects>div>.projects_item>.projects_item_title>p {
+                font-size: 1.2rem;
+            }
+
+            #projects>div>.projects_item>.projects_item_description {
+                font-size: 0.8rem;
+            }
+
+            #projects>div>.projects_item>.projects_item_badges {
+                flex-wrap: wrap;
+            }
+
+            #projects>div>.projects_item>.projects_item_badges>div>p {
+                font-size: 0.6rem;
+            }
+
+            #projects>div>.projects_item>.projects_item_badges>div>span {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            header>h1 {
+                font-size: 1.5rem;
+            }
+
+            #infos {
+                width: 90%;
+            }
+
+            #projects {
+                width: 90%;
+            }
+
+            #background {
+                width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            #infos_top>img {
+                width: 150px;
+            }
+
+            #infos_top>div>h2 {
+                font-size: 1.3rem;
+            }
+
+            #infos_top>div>div>h3 {
+                font-size: 1rem;
+            }
+
+            #infos_top>div>h4 {
+                font-size: 0.8rem;
+            }
+
+            #infos_middle>h2 {
+                font-size: 1.3rem;
+            }
+
+            #infos_middle>span {
+                margin: 0 20px;
+                margin-bottom: 20px;
+            }
+
+            #infos_middle>p {
+                font-size: 0.9rem;
+            }
+
+            #infos_bottom>h2 {
+                font-size: 1.3rem;
+            }
+
+            #infos_bottom>span {
+                margin: 0 20px;
+                margin-bottom: 20px;
+            }
+
+            #projects>h2 {
+                font-size: 1.3rem;
+            }
+
+            #projects>span {
+                margin: 0 20px;
+                margin-bottom: 20px;
+            }
+
+            #background>h2 {
+                font-size: 1.3rem;
+            }
+
+            #background>span {
+                margin: 0 20px;
+                margin-bottom: 20px;
             }
         }
         </style>

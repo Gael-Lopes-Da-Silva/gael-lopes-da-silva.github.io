@@ -622,6 +622,8 @@
                     $("footer>p>i").css("color", "#000000");
                     $("footer>p>i").attr("class", "bi bi-emoji-surprise-fill");
 
+                    $("header>h1").html("🎃 Welcome To My Portfolio 🎃");
+
                     holidayClass = "halloween";
                 } else if (isInRange(holidays["christmas"])) {
                     $("header").addClass("christmas_header");
@@ -629,10 +631,14 @@
                     $("footer>p>i").css("color", "#008000");
                     $("footer>p>i").attr("class", "bi bi-tree-fill");
 
+                    $("header>h1").html("☃️ Welcome To My Portfolio ☃️");
+
                     holidayClass = "christmas_header";
                 } else if (isInRange(holidays["valentinesDay"])) {
                     $("header").addClass("valentinesDay");
                     $("footer").addClass("valentinesDay");
+
+                    $("header>h1").html("💕 Welcome To My Portfolio 💕");
 
                     holidayClass = "valentinesDay";
                 } else if (isInRange(holidays["saintPatricksDay"])) {
@@ -640,6 +646,8 @@
                     $("footer").addClass("saintPatricksDay");
                     $("footer>p>i").css("color", "#ffdd00");
                     $("footer>p>i").attr("class", "bi bi-shield-fill");
+
+                    $("header>h1").html("🍀 Welcome To My Portfolio 🍀");
 
                     holidayClass = "saintPatricksDay";
                 }

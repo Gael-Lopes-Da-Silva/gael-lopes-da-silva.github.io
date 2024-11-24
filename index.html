@@ -303,11 +303,11 @@
             margin-right: 5px;
         }
 
-        .projects_item_badges>div>p {
+        .projects_item_badges>div>i {
             margin: 0;
             padding: 1px;
             padding-left: 6px;
-            padding-right: 4px;
+            padding-right: 6px;
             color: white;
             background-color: #242424;
             border: solid 4px #161616;
@@ -319,7 +319,7 @@
 
         .projects_item_badge_color {
             padding: 1px;
-            padding-left: 4px;
+            padding-left: 6px;
             padding-right: 6px;
             color: white;
             background-color: #6f1451;
@@ -464,6 +464,10 @@
         }
 
         @media screen and (max-width: 700px) {
+            header {
+                width: 90%;
+            }
+
             header>h1 {
                 font-size: 1.5rem;
             }
@@ -479,9 +483,17 @@
             #background {
                 width: 90%;
             }
+
+            footer {
+                width: 90%;
+            }
         }
 
         @media screen and (max-width: 500px) {
+            #infos {
+                padding: 5% 2%;
+            }
+
             #infos_top>img {
                 width: 150px;
             }
@@ -520,6 +532,10 @@
                 margin-bottom: 20px;
             }
 
+            #projects {
+                padding: 2%;
+            }
+
             #projects>h2 {
                 font-size: 1.3rem;
             }
@@ -527,6 +543,10 @@
             #projects>span {
                 margin: 0 20px;
                 margin-bottom: 20px;
+            }
+
+            #background {
+                padding: 2%;
             }
 
             #background>h2 {
@@ -592,7 +612,7 @@
                 if (isInRange(holidays["halloween"])) {
                     const brightColor = "#ff7518";
                     const darkColor = "#a84c0f";
-                    
+
                     $("header").css("background-color", brightColor).css("border-color", darkColor);
                     $("footer").css("background-color", brightColor).css("border-color", darkColor);
                     $("#infos_top>img").css("background-color", brightColor).css("border-color", darkColor);
@@ -605,7 +625,7 @@
                 } else if (isInRange(holidays["christmas"])) {
                     const brightColor = "#008000";
                     const darkColor = "#005400";
-                    
+
                     $("header").css("background-color", brightColor).css("border-color", darkColor);
                     $("footer").css("background-color", "#4A382E").css("border-color", "#332720");
                     $("#infos_top>img").css("background-color", "#D6001C").css("border-color", "#950013");
@@ -618,7 +638,7 @@
                 } else if (isInRange(holidays["valentinesDay"])) {
                     const brightColor = "#ff69b4";
                     const darkColor = "#b2497d";
-                    
+
                     $("header").css("background-color", brightColor).css("border-color", darkColor);
                     $("footer").css("background-color", brightColor).css("border-color", darkColor);
                     $("#infos_top>img").css("background-color", brightColor).css("border-color", darkColor);
@@ -630,12 +650,12 @@
                 } else if (isInRange(holidays["saintPatricksDay"])) {
                     const brightColor = "#3b7a57";
                     const darkColor = "#2e573a";
-                    
+
                     $("header").css("background-color", brightColor).css("border-color", darkColor);
                     $("footer").css("background-color", brightColor).css("border-color", darkColor);
                     $("#infos_top>img").css("background-color", brightColor).css("border-color", darkColor);
                     $(".projects_item_badge_color").css("background-color", brightColor).css("border-color", darkColor);
-                    
+
                     $("footer>p>i").attr("class", "bi bi-shield-fill").css("color", "#ffdd00");
                     $("header>h1").html("🍀 Welcome To My Portfolio 🍀");
 
@@ -657,24 +677,24 @@
                         let projects_item_description = $("<p>", { class: "projects_item_description", text: item.description });
                         let projects_item_badges = $("<div>", { class: "projects_item_badges" });
 
-                        let stars_badge = $("<div>");
-                        stars_badge.append($("<p>", { text: "stars" }));
+                        let stars_badge = $("<div>", { title: "stars" });
+                        stars_badge.append($("<i>", { class: "bi bi-star-fill" }));
                         stars_badge.append($("<span>", { text: item.stargazers_count, class: "projects_item_badge_color", style: badgesStyle }));
                         projects_item_badges.append(stars_badge);
 
-                        let forks_badge = $("<div>");
-                        forks_badge.append($("<p>", { text: "forks" }));
-                        forks_badge.append($("<span>", { text: item.forks_count, class: "projects_item_badge_color", style: badgesStyle }));
-                        projects_item_badges.append(forks_badge);
-
-                        let watchers_badge = $("<div>");
-                        watchers_badge.append($("<p>", { text: "watchers" }));
+                        let watchers_badge = $("<div>", { title: "watchers" });
+                        watchers_badge.append($("<i>", { class: "bi bi-eye-fill" }));
                         watchers_badge.append($("<span>", { text: item.watchers_count, class: "projects_item_badge_color", style: badgesStyle }));
                         projects_item_badges.append(watchers_badge);
 
+                        let forks_badge = $("<div>", { title: "forks" });
+                        forks_badge.append($("<i>", { class: "bi bi-diagram-2-fill" }));
+                        forks_badge.append($("<span>", { text: item.forks_count, class: "projects_item_badge_color", style: badgesStyle }));
+                        projects_item_badges.append(forks_badge);
+
                         if (item.language !== null) {
-                            let language_badge = $("<div>");
-                            language_badge.append($("<p>", { text: "language" }));
+                            let language_badge = $("<div>", { title: "language" });
+                            language_badge.append($("<i>", { class: "bi bi-braces" }));
                             language_badge.append($("<span>", { text: item.language, class: "projects_item_badge_color", style: badgesStyle }));
                             projects_item_badges.append(language_badge);
                         }
@@ -753,8 +773,14 @@
         <span></span>
 
         <details open>
-            <summary>Master Of Engineering</summary>
-            <p>2024 ~</p>
+            <summary>
+                <i class="bi bi-book-fill"></i>
+                Master Of Engineering
+            </summary>
+            <p>
+                <i class="bi bi-calendar2-week-fill"></i>
+                2024 ~
+            </p>
             <div>
                 <p>
                     It's a dual study in the field of IT which takes place over 3 years. I choose to study at home through distance learning and work physically at my company.
@@ -763,8 +789,14 @@
         </details>
 
         <details open>
-            <summary>BTS SIO - SLAM</summary>
-            <p>2022 - 2024</p>
+            <summary>
+                <i class="bi bi-book-fill"></i>
+                BTS SIO - SLAM
+            </summary>
+            <p>
+                <i class="bi bi-calendar2-week-fill"></i>
+                2022 - 2024
+            </p>
             <div>
                 <p>
                     It's a formation in the field of IT which takes place over 2 years. During these two years, we must
@@ -774,8 +806,14 @@
         </details>
 
         <details open>
-            <summary>One Year Of Computer Science Degree</summary>
-            <p>2021 - 2022</p>
+            <summary>
+                <i class="bi bi-book-fill"></i>
+                One Year Of Computer Science Degree
+            </summary>
+            <p>
+                <i class="bi bi-calendar2-week-fill"></i>
+                2021 - 2022
+            </p>
             <div>
                 <p>
                     I have done 1 year of Computer Science Degree at Orélans in France.
@@ -791,8 +829,14 @@
         </details>
 
         <details open>
-            <summary>High School Baccalaureate</summary>
-            <p>2018 - 2021</p>
+            <summary>
+                <i class="bi bi-book-fill"></i>
+                High School Baccalaureate
+            </summary>
+            <p>
+                <i class="bi bi-calendar2-week-fill"></i>
+                2018 - 2021
+            </p>
             <div>
                 <p>
                     I have done a A Level degree in France at Lycée Claude de France.
@@ -809,7 +853,7 @@
     <footer>
         <p>Made with<i class="bi bi-heart-fill"></i>in a single html file</p>
         <a href="https://github.com/Gael-Lopes-Da-Silva/portfolio?tab=BSD-3-Clause-1-ov-file">
-            <i class="bi bi-c-circle"></i>2024 Gaël LOPES DA SILVA
+            <i class="bi bi-c-circle-fill"></i>2024 Gaël LOPES DA SILVA
         </a>
     </footer>
 </body>

@@ -1,6 +1,6 @@
 [BSD 3-Clause License](https://opensource.org/license/bsd-3-clause/)
 
-Copyright (c) 2024, Gael Lopes Da Silva
+Copyright (c) 2025, Gael Lopes Da Silva
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
